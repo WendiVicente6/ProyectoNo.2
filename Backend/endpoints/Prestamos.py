@@ -122,7 +122,7 @@ def RegistrarPrestamo():
                         }),200                   
                     else:
                         return jsonify({
-                            "mensaje": "ID no encontrado, verifique los datos estén correctos"
+                            "mensaje": "ID no encontrado, verifique que los datos estén correctos"
                         }),200
                 except Exception as e:
                     return jsonify({
@@ -132,12 +132,12 @@ def RegistrarPrestamo():
             else:
                 return jsonify({
                     "estado": "-1",
-                    "mensaje": "Petición incorrecta"
+                    "mensaje": "Verifique los datosa"
                 }),201
         else:
             return jsonify({
                 "estado": "-1",
-                "mensaje": "Petición incorrecta"
+                "mensaje": "Verifique los datosa"
             }),201
     else:
         return jsonify({
@@ -202,12 +202,12 @@ def Multa():
             else:
                 return jsonify({
                     "estado": "-1",
-                    "mensaje": "Petición incorrecta"
+                    "mensaje": "Verifique los datos"
                 }),201
         else:
             return jsonify({
                 "estado": "-1",
-                "mensaje": "Petición incorrecta"
+                "mensaje": "Verifique los datos"
             }),201
     else:
         return jsonify({

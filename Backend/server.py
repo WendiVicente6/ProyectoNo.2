@@ -6,7 +6,6 @@ from flask_socketio import SocketIO
 ## LLAMADAS ENPOINTS
 
 from endpoints.usuarios import usuarios_service
-from endpoints.productos import productos_service
 from endpoints.Libro import Libro_service
 from endpoints.Prestamos import Prestamo_service
 from endpoints.Equipo import Equipo_service
@@ -67,7 +66,6 @@ socket = SocketIO(app, cors_allowed_origins="*")
 """
 
 app.register_blueprint(usuarios_service, url_prefix="/api/v1/usuarios")
-app.register_blueprint(productos_service, url_prefix="/api/v1/productos")
 app.register_blueprint(Libro_service, url_prefix="/api/v1/Libro")
 app.register_blueprint(Prestamo_service, url_prefix="/api/v1/Prestamos")
 app.register_blueprint(Equipo_service, url_prefix="/api/v1/Equipos")

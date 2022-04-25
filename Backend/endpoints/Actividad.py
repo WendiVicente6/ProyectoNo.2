@@ -52,12 +52,12 @@ def Registro():
             else:
                 return jsonify({
                     "estado": "-1",
-                    "mensaje": "Petición incorrecta"
+                    "mensaje": "Verifique los datosa"
                 }),201
         else:
             return jsonify({
                 "estado": "-1",
-                "mensaje": "Petición incorrecta"
+                "mensaje": "Verifique los datos"
             }),201
     else:
         return jsonify({

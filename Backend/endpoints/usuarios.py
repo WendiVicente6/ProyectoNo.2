@@ -23,24 +23,28 @@ def Registro():
                     mongo_db = cliente_mongo["store"]
                     mongo_collections = mongo_db["usuario"]
                     respuesta_mongo = mongo_collections.insert_one(usuario_insertar)
-                    return jsonify({
-                        "status": 200,
-                        "msg": "RESPONSE"
-                    }),200
+                    if respuesta_mongo!=None:
+                        return jsonify({
+                            "status": 200,
+                            "msg": "RESPONSE"
+                        }),200
+                    else:
+                        return jsonify({
+                            "estado": 1,
+                            "mensaje": "Verifique los datos"
+                        }),200
                 except Exception as e:
                     return jsonify({
-                        "estado": "-3",
                         "mensaje": e
                     }),201
             else:
                 return jsonify({
-                    "estado": "-1",
-                    "mensaje": "Petición incorrecta"
+                    "mensaje": "Verifique los datos"
                 }),201
         else:
             return jsonify({
                 "estado": "-1",
-                "mensaje": "Petición incorrecta"
+                "mensaje": "Verifique los datos"
             }),201
     else:
         return jsonify({
@@ -83,7 +87,7 @@ def Login():
                     else:
                         return jsonify({
                             "estado": 1,
-                            "mensaje": "Usuario y/o Contraseña incorrectos"
+                            "mensaje": "Datos Incorrectos"
                         }),200
                 except Exception as e:
                     return jsonify({
@@ -93,12 +97,12 @@ def Login():
             else:
                 return jsonify({
                     "estado": "-1",
-                    "mensaje": "Petición incorrecta"
+                    "mensaje": "Verifique los datos"
                 }),201
         else:
             return jsonify({
                 "estado": "-1",
-                "mensaje": "Petición incorrecta"
+                "mensaje": "Verifique los datos"
             }),201
     else:
         return jsonify({

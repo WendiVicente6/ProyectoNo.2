@@ -31,7 +31,6 @@ def Registro():
                     }),200
                 except Exception as e:
                     return jsonify({
-                        "estado": "-3",
                         "mensaje": e
                     }),201
             else:
@@ -85,7 +84,7 @@ def VerLibro():
                     else:
                         return jsonify({
                             "estado": 1,
-                            "mensaje": "Usuario y/o Contraseña incorrectos"
+                            "mensaje": "Datos incorrectos"
                         }),200
                 except Exception as e:
                     return jsonify({
@@ -153,12 +152,12 @@ def ActualizarLibro():
             else:
                 return jsonify({
                     "estado": "-1",
-                    "mensaje": "Petición incorrecta"
+                    "mensaje": "Verifique los datos"
                 }),201
         else:
             return jsonify({
                 "estado": "-1",
-                "mensaje": "Petición incorrecta"
+                "mensaje": "Verifique los datos"
             }),201
     else:
         return jsonify({
